@@ -51,5 +51,10 @@ object.add_planes(planes=[
 
 ## Demo
 
+Single Cube Rotation
+
+![](./assets/cube.gif)
+
 A simple game rendered by Python 3D Renderer.
-<video src="/assetsgame.wmv" controls="true" width="600"></video>
+
+![](./assets/game.png)
