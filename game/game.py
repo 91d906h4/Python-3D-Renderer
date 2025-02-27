@@ -1,8 +1,8 @@
 # Import libraries
 from camera import Camera
 from object import Object
+from screen import Screen
 from operation import Operation
-from screen import Camera, Screen
 from utils.sphere import generate_sphere
 
 
