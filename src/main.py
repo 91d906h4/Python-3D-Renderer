@@ -72,6 +72,28 @@ def main() -> None:
         [0, 1, 2], [3, 2, 1],
     ], color=[255, 255, 255])
 
+    object4 = Object()
+    object4.set_origin([0, 0, 0])
+    object4.add_vertices(vertices=[
+        [0, 0, 0],
+        [1, 0, 0],
+        [2, 0, 0],
+        [0, 0, 1],
+        [1, 0, 1],
+        [2, 0, 1],
+        [0, 0, 2],
+        [1, 0, 2],
+        [2, 0, 2],
+    ])
+    object4.add_planes(planes=[
+        [3, 1, 0], [1, 3, 4],
+        [7, 5, 4], [5, 7, 8],
+    ], color=[255, 255, 255])
+    object4.add_planes(planes=[
+        [4, 2, 1], [2, 4, 5],
+        [6, 4, 3], [4, 6, 7],
+    ], color=[128, 128, 128])
+
 
     #####
     import math
@@ -120,14 +142,14 @@ def main() -> None:
     #####
 
     camera = Camera(origin=[0, 1, 0], direction=[0, 0, -1], up=[0, 1, 0])
-    screen = Screen(camera, distance=1.0, width=400, height=300, world_width=2.0, light=[0, 1, 0])
+    screen = Screen(camera, distance=1.0, width=300, height=225, world_width=2.0, light=[0, 1, 0])
 
     while True:
         Operation.rotate(object, {"z": 3, "y": 2, "x": 1}, in_place=True)
         Operation.rotate(object1, {"z": -1, "y": -2, "x": -3}, in_place=True)
         Operation.rotate(object3, {"z": -1, "y": -2, "x": -3}, in_place=True)
 
-        screen.project([object, object1, object3, object2])
+        screen.project([object, object1, object3, object2, object4])
         screen.render()
 
 
