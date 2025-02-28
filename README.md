@@ -33,11 +33,30 @@ git clone https://github.com/your-repo/3d-renderer.git
 2. Import `Camera`, `Screen`, `Object`, and `Operation`
 
 ```py
+# Import libraries
 from camera import Camera
 from object import Object
 from screen import Screen
 from operation import Operation
 
+# Instantiate cameta
+camera = Camera(
+    origin=[0, 0, 0],
+    direction=[0, 0, 1],
+    up=[0, 1, 0],
+)
+
+# Instantiate screen
+screen = Screen(
+    camera,
+    distance=1.0,
+    width=800,
+    height=640,
+    world_width=2.0,
+    light=[0, 1, 0], # Environment light source
+)
+
+# Instantiate objects
 object = Object() # This is a plane
 object.add_vertices(vertices=[
     [0, 0, 0], [1, 0, 0],
@@ -46,6 +65,13 @@ object.add_vertices(vertices=[
 object.add_planes(planes=[
     [0, 1, 2], [2, 3, 0]
 ], color=[0, 255, 255])
+
+while True:
+    # Project to screen
+    screen.project([object]) # The input is a list of objects
+
+    # Rendering
+    screen.render()
 ```
 
 ## Demo
