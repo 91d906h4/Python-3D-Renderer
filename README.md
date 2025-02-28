@@ -38,7 +38,11 @@ from camera import Camera
 from object import Object
 from screen import Screen
 from operation import Operation
+```
 
+3. Instantiate `Camera`, `Screen`, and `Object`
+
+```py
 # Instantiate cameta
 camera = Camera(
     origin=[0, 0, 0],
@@ -65,7 +69,11 @@ object.add_vertices(vertices=[
 object.add_planes(planes=[
     [0, 1, 2], [2, 3, 0]
 ], color=[0, 255, 255])
+```
 
+4. Render the scene
+
+```py
 while True:
     # Project to screen
     screen.project([object]) # The input is a list of objects
