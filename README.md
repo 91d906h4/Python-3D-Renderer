@@ -11,7 +11,6 @@ This project is a real-time 3D renderer implemented in Python. It features a cus
 - **Z-Buffering**: Ensures correct depth sorting for overlapping objects.
 - **Flat Shading**: Computes lighting per polygon for a classic low-poly aesthetic.
 - **Near-Plane Clipping**: Avoids rendering artifacts by clipping geometry behind the camera.
-- **Parallel Projection Mode**: Allows toggling between perspective and orthographic views.
 - **Interactive Camera Controls**:
   - `WASD` for movement
   - Arrow keys for rotation
